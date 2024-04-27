@@ -1,0 +1,17 @@
+C:\Users\HP\Desktop\EMailApp\src\EMailApp.Business\bin\Debug\net6.0\EMailApp.Business.deps.json
+C:\Users\HP\Desktop\EMailApp\src\EMailApp.Business\bin\Debug\net6.0\EMailApp.Business.dll
+C:\Users\HP\Desktop\EMailApp\src\EMailApp.Business\bin\Debug\net6.0\EMailApp.Business.pdb
+C:\Users\HP\Desktop\EMailApp\src\EMailApp.Business\bin\Debug\net6.0\EMailApp.Core.dll
+C:\Users\HP\Desktop\EMailApp\src\EMailApp.Business\bin\Debug\net6.0\EMailApp.DataAccess.dll
+C:\Users\HP\Desktop\EMailApp\src\EMailApp.Business\bin\Debug\net6.0\EMailApp.DataAccess.pdb
+C:\Users\HP\Desktop\EMailApp\src\EMailApp.Business\bin\Debug\net6.0\EMailApp.Core.pdb
+C:\Users\HP\Desktop\EMailApp\src\EMailApp.Business\obj\Debug\net6.0\EMailApp.Business.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\EMailApp\src\EMailApp.Business\obj\Debug\net6.0\EMailApp.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\EMailApp\src\EMailApp.Business\obj\Debug\net6.0\EMailApp.Business.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\EMailApp\src\EMailApp.Business\obj\Debug\net6.0\EMailApp.Business.AssemblyInfo.cs
+C:\Users\HP\Desktop\EMailApp\src\EMailApp.Business\obj\Debug\net6.0\EMailApp.Business.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\EMailApp\src\EMailApp.Business\obj\Debug\net6.0\EMailApp.Business.csproj.CopyComplete
+C:\Users\HP\Desktop\EMailApp\src\EMailApp.Business\obj\Debug\net6.0\EMailApp.Business.dll
+C:\Users\HP\Desktop\EMailApp\src\EMailApp.Business\obj\Debug\net6.0\refint\EMailApp.Business.dll
+C:\Users\HP\Desktop\EMailApp\src\EMailApp.Business\obj\Debug\net6.0\EMailApp.Business.pdb
+C:\Users\HP\Desktop\EMailApp\src\EMailApp.Business\obj\Debug\net6.0\ref\EMailApp.Business.dll

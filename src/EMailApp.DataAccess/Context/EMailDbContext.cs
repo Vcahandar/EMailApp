@@ -13,7 +13,7 @@ namespace EMailApp.DataAccess.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=Server=DESKTOP-1HLMAF8;Database=EMailAppDB;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-1HLMAF8;Database=EMailAppDB;Trusted_Connection=True;");
         }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Draft> Drafts { get; set; }
