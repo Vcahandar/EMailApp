@@ -1,0 +1,40 @@
+﻿@model List<Message>
+
+
+
+<div class="col-lg grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hoverable Table</h4>
+            <p class="card-description">
+                Add class <code>.table-hover</code>
+            </p>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Subject</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.SenderName</td>
+                                <td>@item.Subject</td>
+                                <td>@item.Date</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-danger btn-fw">Delete</button>
+                                </td>
+                            </tr>
+
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,10 @@
+using EMailApp.Business.Implementations;
+using EMailApp.Business.Interfaces;
 using EMailApp.Core.Concrete;
 using EMailApp.DataAccess.Context;
 using EMailApp.DataAccess.Repositories.Implementations;
 using EMailApp.DataAccess.Repositories.Interfaces;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +20,20 @@ builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<EMailD
 
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<IMessageService, MessageService>();
+builder.Services.AddScoped<IDraftService, DraftService>();
+
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x =>
+{
+    x.LoginPath = "/Login/Index";
+
+});
+
+builder.Services.ConfigureApplicationCookie(opt =>
+{
+    opt.LoginPath = "/Login/Index";
+});
 
 
 
@@ -42,6 +59,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Account}/{action=Login}/{id?}");
 
 app.Run();
