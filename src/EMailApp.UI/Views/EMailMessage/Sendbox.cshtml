@@ -5,16 +5,13 @@
 <div class="col-lg grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">INBOX</h4>
-            
-            <div class="col-md-10">
-                <a asp-action="SendMessage" class="btn btn-primary">SendMessage</a>
-            </div>
+            <h4 class="card-title">SENT</h4>
+        
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Sender Name</th>
+                            <th>Receiver Name</th>
                             <th>Subject</th>
                             <th>Date</th>
                         </tr>
@@ -23,7 +20,7 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.SenderName</td>
+                                <td>@item.ReceiverName</td>
                                 <td>@item.Subject</td>
                                 <td>@item.Date</td>
                                 <td>
