@@ -24,6 +24,7 @@
                                 <td>@item.Subject</td>
                                 <td>@item.Date</td>
                                 <td>
+                                    <a asp-action="SendboxMessageDetails" asp-route-id="@item.MessageId" class="btn btn-info">Info</a>
                                     <button type="button" class="btn btn-outline-danger btn-fw">Delete</button>
                                 </td>
                             </tr>

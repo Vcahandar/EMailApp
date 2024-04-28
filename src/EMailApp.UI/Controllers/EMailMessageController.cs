@@ -3,7 +3,6 @@ using EMailApp.Core.Concrete;
 using EMailApp.DataAccess.Context;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace EMailApp.UI.Controllers
 {
@@ -62,6 +61,22 @@ namespace EMailApp.UI.Controllers
             return RedirectToAction("Inbox");
 
         }
+
+
+
+        public IActionResult InboxMessageDetails(int id)
+        {
+            Message message = _messageService.TGetById(id);
+            return View(message);
+        }
+
+        public IActionResult SendboxMessageDetails(int id)
+        {
+            Message message = _messageService.TGetById(id);
+            return View(message);
+        }
+
+
 
 
 
