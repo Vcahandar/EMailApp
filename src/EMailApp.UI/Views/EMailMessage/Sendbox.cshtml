@@ -6,34 +6,50 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">SENT</h4>
-        
-            <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Receiver Name</th>
-                            <th>Subject</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>@item.ReceiverName</td>
-                                <td>@item.Subject</td>
-                                <td>@item.Date</td>
-                                <td>
-                                    <a asp-action="SendboxMessageDetails" asp-route-id="@item.MessageId" class="btn btn-info">Info</a>
-                                    <button type="button" class="btn btn-outline-danger btn-fw">Delete</button>
-                                </td>
-                            </tr>
-
-                        }
-
-                    </tbody>
-                </table>
+            <div class="col-md-10">
+                <a asp-action="SendMessage" class="btn btn-primary">Send Message</a>
             </div>
+
+            @if (Model.Count <= 0 || !Model.Any(m => m.Status))
+            {
+                <div class="alert alert-info mt-5" role="alert">
+                    No sent messages! Send one now!
+                </div>
+            }else
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Receiver Name</th>
+                                <th>Subject</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model.Where(m => m.Status == true))
+                            {
+                                <tr>
+                                    <td>@item.ReceiverName</td>
+                                    <td>@item.Subject</td>
+                                    <td>@item.Date</td>
+                                    <td>
+                                        <a asp-action="SendboxMessageDetails" asp-route-id="@item.MessageId" class="btn btn-info">Info</a>
+                                        <a asp-action="TrashMessages" asp-route-id="@item.MessageId" class="btn btn-outline-danger btn-fw">Delete</a>
+                                    </td>
+                                </tr>
+
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+
+            }
+        
         </div>
     </div>
 </div>
+
+

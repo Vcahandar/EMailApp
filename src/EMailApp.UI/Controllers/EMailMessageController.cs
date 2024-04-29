@@ -10,10 +10,12 @@ namespace EMailApp.UI.Controllers
     {
         readonly IMessageService _messageService;
         readonly UserManager<AppUser> _userManager;
-        public EMailMessageController(IMessageService messageService, UserManager<AppUser> userManager)
+        readonly EMailDbContext _context;
+        public EMailMessageController(IMessageService messageService, UserManager<AppUser> userManager, EMailDbContext context)
         {
             _messageService = messageService;
             _userManager = userManager;
+            _context = context;
         }
 
         public async Task<IActionResult> Inbox(string e)
@@ -23,6 +25,7 @@ namespace EMailApp.UI.Controllers
             var messageList = _messageService.GetListReceiverMessage(e);
             return View(messageList);
         }
+
 
 
         public async Task<IActionResult> Sendbox(string p)
@@ -43,21 +46,20 @@ namespace EMailApp.UI.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> SendMessage(Message p)
+        public async Task<IActionResult> SendMessage(Message message)
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
             string mail = values.Email;
             string name = values.Name + " " + values.Surname;
-            p.Date = DateTime.Now;
-            p.SenderMail = mail;
-            p.SenderName = name;
-            p.Status = true;
-            p.IsDraft = false;
-            p.IsRead = false;
-            EMailDbContext c = new EMailDbContext();
-            var usernamesurname = c.Users.Where(x => x.Email == p.ReceiverMail).Select(y => y.Name + " " + y.Surname).FirstOrDefault();
-            p.ReceiverName = usernamesurname;
-            _messageService.TInsert(p);
+            message.Date = DateTime.Now;
+            message.SenderMail = mail;
+            message.SenderName = name;
+            message.Status = true;
+            message.IsDraft = false;
+            message.IsRead = false;
+            var usernamesurname = _context.Users.Where(x => x.Email == message.ReceiverMail).Select(y => y.Name + " " + y.Surname).FirstOrDefault();
+            message.ReceiverName = usernamesurname;
+            _messageService.TInsert(message);
             return RedirectToAction("Inbox");
 
         }
@@ -77,9 +79,45 @@ namespace EMailApp.UI.Controllers
         }
 
 
+        public IActionResult TrashMessageList()
+        {
+            var values = _messageService.GetListDeleteMessage();
+            return View(values);
+        }
 
 
+        public IActionResult TrashMessages(int id)
+        {
+           
+            var value = _context.Messages.Where(x => x.MessageId == id).FirstOrDefault();
+            value.Status = false;
+            _context.SaveChanges();
+            return RedirectToAction("TrashMessageList");
+        }
+
+        public IActionResult TrashOutMessages(int id)
+        {
+            var value = _context.Messages.Where(x => x.MessageId == id).FirstOrDefault();
+            value.Status = true;
+            _context.SaveChanges();
+            return RedirectToAction("TrashMessageList");
+        }
+
+
+
+        [HttpPost]
+        public void MarkAsRead(int messageId)
+        {
+            var message = _context.Messages.FirstOrDefault(m => m.MessageId == messageId);
+            if (message != null)
+            {
+                message.IsRead = true;
+                _context.SaveChanges();
+            }
+        }
 
 
     }
+
+
 }

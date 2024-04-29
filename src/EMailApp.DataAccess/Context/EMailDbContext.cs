@@ -17,5 +17,15 @@ namespace EMailApp.DataAccess.Context
         }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Draft> Drafts { get; set; }
+
+
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+
+        //    modelBuilder.Entity<Message>().HasQueryFilter(m => m.Status);
+
+
+        //}
     }
 }

@@ -2,41 +2,97 @@
 
 
 
+
+
+    <style>
+    .bold-text {
+        font-weight: bold;
+    }
+
+    </style>
+
 <div class="col-lg grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">INBOX</h4>
             
-            <div class="col-md-10">
-                <a asp-action="SendMessage" class="btn btn-primary">SendMessage</a>
-            </div>
-            <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Sender Name</th>
-                            <th>Subject</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>@item.SenderName</td>
-                                <td>@item.Subject</td>
-                                <td>@item.Date</td>
-                                <td>
-                                    <a asp-action="InboxMessageDetails" asp-route-id="@item.MessageId" class="btn btn-info">Info</a>
-                                    <button type="button" class="btn btn-outline-danger btn-fw">Delete</button>
-                                </td>
+
+            @if (Model.Count <= 0 || !Model.Any(m=>m.Status))
+            {
+                <div class="alert alert-info mt-5" role="alert">
+                    Your Inbox tab is empty.
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr >
+                                <th>Sender Name</th>
+                                <th>Subject</th>
+                                <th>Date</th>
                             </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Where(m => m.Status).OrderByDescending(m=>m.Date))
+                            {
+                                <tr data-message-id="@item.MessageId" class="@((!item.IsRead) ? "bold-text" : "")">
+                                    <td>@item.SenderName</td>
+                                    <td>
+                                        <a style="color:black; cursor:pointer;" id="infoButton-@item.MessageId" asp-action="InboxMessageDetails" asp-route-id="@item.MessageId">
+                                        @item.Subject
+                                        </a>
+                                    </td>
+                                    <td>@item.Date</td>
+                                    <td>
+                                        <a id="infoButton-@item.MessageId" asp-action="InboxMessageDetails" asp-route-id="@item.MessageId" class="btn btn-info">Info</a>
+                                        <a asp-action="TrashMessages" asp-route-id="@item.MessageId" class="btn btn-outline-danger btn-fw">Delete</a>
+                                    </td>
+                                </tr>
+                            }
 
-                        }
+                        </tbody>
 
-                    </tbody>
-                </table>
-            </div>
+                    </table>
+                </div>
+            }
+
+
         </div>
     </div>
+
+
 </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    // Info düğmesine basıldığında
+    $(document).on('click', '[id^="infoButton-"]', function () {
+        // Düğmenin id'sinden mesaj ID'sini al
+        var messageId = $(this).attr('id').split('-')[1];
+
+        // Mesajı işaretle ve kalın biçimi kaldır
+        markMessageAsRead(messageId);
+    });
+
+    function markMessageAsRead(messageId) {
+        // AJAX isteği göndererek mesajı işaretle
+        $.ajax({
+            type: 'POST',
+            url: '/EMailMessage/MarkAsRead',
+            data: { messageId: messageId },
+            success: function () {
+                // Mesajı işaretlendikten sonra kalın biçimi kaldır
+                $('#infoButton-' + messageId).closest('tr').removeClass('bold-text');
+            },
+            error: function () {
+                alert('An error occurred while marking the message as read.');
+            }
+        });
+    }
+</script>
+

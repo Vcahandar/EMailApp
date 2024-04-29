@@ -313,6 +313,18 @@
                             <span class="menu-title">Sent</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="EMailMessage" asp-action="TrashMessageList">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">Trash</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Draft" asp-action="DraftMessageList">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">Draft</span>
+                        </a>
+                    </li>
 
                 </ul>
             </nav>
@@ -335,6 +347,7 @@
             <script src="~/admin/js/settings.js"></script>
             <script src="~/admin/js/todolist.js"></script>
             <!-- endinject -->
+
             <!-- Custom js for this page-->
             <script src="~/admin/js/dashboard.js"></script>
             <script src="~/admin/js/Chart.roundedBarCharts.js"></script>
