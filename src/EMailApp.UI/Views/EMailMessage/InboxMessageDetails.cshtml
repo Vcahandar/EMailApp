@@ -1,14 +1,37 @@
 ﻿@model Message
 
+
+<style>
+
+    .form-group label {
+        font-family: "Roboto Condensed", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 1.1rem;
+    }
+
+    .btn{
+        font-family: "Roboto Condensed", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 1.1rem;
+    }
+
+</style>
+
 <div class="col-12 grid-margin stretch-card">
-    <div class="card">
+    <div class="card mt-3">
         <div class="card-body">
-            <h4 class="card-title">Message</h4>
+            <h4 class="card-title" style="color: #504b8e;">
+                Message
+            </h4>
 
             <form  class="forms-sample">
                 <div class="form-group">
-                    <label for="exampleInputName1">Recipient's mailing address</label>
-                    <input type="email" disabled="disabled" class="form-control" id="exampleInputName1" asp-for="SenderName">
+                    <label class="title" for="exampleInputName1">Recipient's mailing address</label>
+                    <input type="email" disabled="disabled" class="form-control" id="exampleInputName1" asp-for="SenderMail">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail3">Subject</label>

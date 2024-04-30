@@ -1,9 +1,24 @@
 ﻿@model List<Draft>
 
 
+<style>
+    tr td {
+        font-family: "Roboto Condensed", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-size: 1.2rem !important;
+    }
+
+    .btn {
+        font-family: "Roboto Condensed", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+
+</style>
 
 <div class="col-lg grid-margin stretch-card">
-    <div class="card">
+    <div class="card mt-4">
         <div class="card-body">
             <h4 class="card-title" >Draft</h4>
 
@@ -11,7 +26,8 @@
             @if (Model.Count <= 0 || !Model.Any(m => m.Status))
             {
                 <div class="alert alert-info mt-5" role="alert">
-                    No sent messages! Send one now!
+                    You don't have any saved drafts.<hr>
+                    Saving a draft allows you to keep a message you aren't ready to send yet.
                 </div>
             }
             else
@@ -34,7 +50,7 @@
                                     <td>@item.Subject</td>
                                     <td>@item.Date</td>
                                     <td>
-                                        <a asp-action="SendboxMessageDetails" asp-route-id="@item.DraftId" class="btn btn-info">Info</a>
+                                        <a asp-action="DraftMessageDetails" asp-route-id="@item.DraftId" class="btn btn-info">Info</a>
                                         <a asp-action="DraftOut" asp-route-id="@item.DraftId" class="btn btn-outline-danger btn-fw">Delete</a>
                                     </td>
                                 </tr>

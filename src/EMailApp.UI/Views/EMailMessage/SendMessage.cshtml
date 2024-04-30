@@ -5,7 +5,7 @@
         <div class="card-body">
             <h4 class="card-title">New Message</h4>
 
-            <form method="post" asp-action="SendMessage" class="forms-sample" onsubmit="return validateForm()">
+            <form method="post" asp-action="SendMessage" class="forms-sample">
                 <div class="form-group">
                     <label for="exampleInputName1">Recipient's mailing address</label>
                     <input type="email" class="form-control" id="exampleInputName1" asp-for="ReceiverMail" placeholder="Recipient's mailing address">
@@ -28,7 +28,7 @@
 
                 <button type="submit" asp-controller="Draft" asp-action="DraftMessageSave" class="btn btn-default"><i class="fas fa-pencil-alt"></i>Taslaklara Kaydet</button>
 
-                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <button type="submit" onclick="return validateFormForSubmit()" class="btn btn-primary mr-2">Submit</button>
                 <a asp-action="Inbox" class="btn btn-light">Cancel</a>
             </form>
 
@@ -37,19 +37,18 @@
 </div>
 
 <script>
-    function validateForm() {
+    function validateFormForSubmit() {
         var receiverMail = document.getElementById("exampleInputName1").value;
         var subject = document.getElementById("exampleInputEmail3").value;
         var content = document.getElementById("exampleTextarea1").value;
 
         if (receiverMail.trim() === '' || subject.trim() === '' || content.trim() === '') {
             alert("Please fill out all fields");
-            return false; // Formu gönderme işlemi iptal edilir
+            return false; 
         }
-        return true; // Form gönderme işlemi devam eder
+        return true; 
     }
 </script>
-
 
 
 

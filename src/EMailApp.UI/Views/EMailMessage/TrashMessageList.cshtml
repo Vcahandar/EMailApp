@@ -1,13 +1,23 @@
 ﻿@model List<Message>
 
+
+
+
+<style>
+    tr td {
+        font-family: "Roboto Condensed", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-size: 1.2rem !important;
+    }
+
+</style>
+
 <div class="col-lg grid-margin stretch-card">
-    <div class="card">
+    <div class="card mt-4">
         <div class="card-body">
             <h4 class="card-title">Trash</h4>
 
-            <div class="col-md-10">
-                <a asp-action="SendMessage" class="btn btn-primary">SendMessage</a>
-            </div>
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
@@ -25,10 +35,12 @@
                                 <td> <a>Sender:</a> @item.SenderName</td>
                                 <td> <a>Receiver:</a> @item.ReceiverName</td>
                                 <td>@item.Subject</td>
-                                <td>@item.Date</td>
+                                <td>@item.Date.ToString("dd/MM/yyyy")</td>
                                 <td>
                                     <a asp-action="InboxMessageDetails" asp-route-id="@item.MessageId" class="btn btn-info">Info</a>
                                     <a asp-action="TrashOutMessages" asp-route-id="@item.MessageId" class="btn btn-dark btn-rounded btn-fw">Restore</a>
+                                    <a asp-action="TrashMessagesDelete" asp-route-id="@item.MessageId" class="btn btn-outline-danger btn-fw">Delete</a>
+
                                 </td>
                             </tr>
 

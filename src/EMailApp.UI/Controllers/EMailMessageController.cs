@@ -48,21 +48,32 @@ namespace EMailApp.UI.Controllers
         [HttpPost]
         public async Task<IActionResult> SendMessage(Message message)
         {
-            var values = await _userManager.FindByNameAsync(User.Identity.Name);
-            string mail = values.Email;
-            string name = values.Name + " " + values.Surname;
-            message.Date = DateTime.Now;
-            message.SenderMail = mail;
-            message.SenderName = name;
-            message.Status = true;
-            message.IsDraft = false;
-            message.IsRead = false;
-            var usernamesurname = _context.Users.Where(x => x.Email == message.ReceiverMail).Select(y => y.Name + " " + y.Surname).FirstOrDefault();
-            message.ReceiverName = usernamesurname;
-            _messageService.TInsert(message);
-            return RedirectToAction("Inbox");
+
+
+            if(message.ReceiverMail != null)
+            {
+                var values = await _userManager.FindByNameAsync(User.Identity.Name);
+                string mail = values.Email;
+                string name = values.Name + " " + values.Surname;
+                message.Date = DateTime.Now;
+                message.SenderMail = mail;
+                message.SenderName = name;
+                message.Status = true;
+                message.IsDraft = false;
+                message.IsRead = false;
+                var usernamesurname = _context.Users.Where(x => x.Email == message.ReceiverMail).Select(y => y.Name + " " + y.Surname).FirstOrDefault();
+                message.ReceiverName = usernamesurname;
+                _messageService.TInsert(message);
+                return RedirectToAction("Inbox");
+            }
+
+            return View();
+
+
 
         }
+
+
 
 
 
@@ -92,7 +103,7 @@ namespace EMailApp.UI.Controllers
             var value = _context.Messages.Where(x => x.MessageId == id).FirstOrDefault();
             value.Status = false;
             _context.SaveChanges();
-            return RedirectToAction("TrashMessageList");
+            return RedirectToAction("Inbox", "EMailMessage");
         }
 
         public IActionResult TrashOutMessages(int id)
@@ -101,6 +112,13 @@ namespace EMailApp.UI.Controllers
             value.Status = true;
             _context.SaveChanges();
             return RedirectToAction("TrashMessageList");
+        }
+
+        public IActionResult TrashMessagesDelete(int id)
+        {
+            _messageService.TDelete(id);
+            return RedirectToAction("TrashMessageList");
+
         }
 
 

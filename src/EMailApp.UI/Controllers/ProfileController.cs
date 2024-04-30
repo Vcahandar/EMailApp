@@ -47,7 +47,7 @@ namespace EMailApp.UI.Controllers
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Login");
+                return RedirectToAction("Index", "Profile");
             }
             return View();
         }

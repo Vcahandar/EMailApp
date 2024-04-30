@@ -22786,7 +22786,7 @@ select.border-dark.tt-hint:focus {
 }
 
 .form-group label {
-  font-size: 0.875rem;
+  font-size: 1.1rem;
   line-height: 1.4rem;
   vertical-align: top;
   margin-bottom: .5rem;
@@ -28621,10 +28621,11 @@ div.tagsinput span.tag a {
   margin-top: .2rem;
 }
 
-.sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link, .sidebar .nav:not(.sub-menu) > .nav-item:hover[aria-expanded="true"] {
-  background: #4B49AC;
-  color: #fff;
-}
+    .sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link, .sidebar .nav:not(.sub-menu) > .nav-item:hover[aria-expanded="true"] {
+        background: #4B49AC;
+        color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
 
 .sidebar .nav:not(.sub-menu) > .nav-item > .nav-link {
   margin: 0;

@@ -24,6 +24,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/HP/Desktop/EMailApp/src/EMailApp.UI/Views/Draft/DraftMessageDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJhZnRcRHJhZnRNZXNzYWdlRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/HP/Desktop/EMailApp/src/EMailApp.UI/Views/Draft/DraftMessageList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJhZnRcRHJhZnRNZXNzYWdlTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,6 +62,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/HP/Desktop/EMailApp/src/EMailApp.UI/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/EMailApp/src/EMailApp.UI/Views/Profile/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/HP/Desktop/EMailApp/src/EMailApp.UI/Views/Shared/Error.cshtml]

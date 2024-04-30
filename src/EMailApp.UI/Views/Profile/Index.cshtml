@@ -1,0 +1,64 @@
+﻿@model UserUpdateVM
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Default form</h4>
+            <p class="card-description">
+                Basic form layout
+            </p>
+            <form method="post" enctype="multipart/form-data" class="forms-sample">
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Name</label>
+                    <input type="text" class="form-control" asp-for="Name" id="exampleInputUsername1" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Surname</label>
+                    <input type="text" asp-for="Surname" class="form-control" id="exampleInputEmail1" placeholder="Surname">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" asp-for="Password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputConfirmPassword1">Confirm Password</label>
+                    <input type="password" class="form-control" asp-for="ConfirmPassword" id="exampleInputConfirmPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label>File upload</label>
+                    @if (!string.IsNullOrEmpty(Model.PictureUrl))
+                    {
+                        <img src="~/userimage/@Model.PictureUrl" alt="User Picture" class="img-thumbnail" style="max-width: 200px;" />
+                        <input type="file"  asp-for="Picture" class="file-upload-default">
+                        <div class="input-group col-xs-12">
+                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                            <span class="input-group-append">
+                                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                            </span>
+                        </div>
+                    }
+                    else
+                    {
+
+                        <input type="file"  asp-for="Picture" class="file-upload-default">
+                        <div class="input-group col-xs-12">
+                            <input asp-for="Picture" type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                            <span class="input-group-append">
+                                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                            </span>
+                        </div>
+                    }
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Update</button>
+                <button class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+

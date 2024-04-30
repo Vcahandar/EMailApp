@@ -6,13 +6,20 @@
 
     <style>
     .bold-text {
-        font-weight: bold;
+        font-weight: bold !important;
+    }
+
+    tr td {
+        font-family: "Roboto Condensed", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-size: 1.2rem !important;
     }
 
     </style>
 
 <div class="col-lg grid-margin stretch-card">
-    <div class="card">
+    <div class="card mt-4">
         <div class="card-body">
             <h4 class="card-title">INBOX</h4>
             
@@ -44,7 +51,7 @@
                                         @item.Subject
                                         </a>
                                     </td>
-                                    <td>@item.Date</td>
+                                    <td>@item.Date.ToString("dd/MM/yyyy")</td>
                                     <td>
                                         <a id="infoButton-@item.MessageId" asp-action="InboxMessageDetails" asp-route-id="@item.MessageId" class="btn btn-info">Info</a>
                                         <a asp-action="TrashMessages" asp-route-id="@item.MessageId" class="btn btn-outline-danger btn-fw">Delete</a>
@@ -70,23 +77,18 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
-    // Info düğmesine basıldığında
     $(document).on('click', '[id^="infoButton-"]', function () {
-        // Düğmenin id'sinden mesaj ID'sini al
         var messageId = $(this).attr('id').split('-')[1];
 
-        // Mesajı işaretle ve kalın biçimi kaldır
         markMessageAsRead(messageId);
     });
 
     function markMessageAsRead(messageId) {
-        // AJAX isteği göndererek mesajı işaretle
         $.ajax({
             type: 'POST',
             url: '/EMailMessage/MarkAsRead',
             data: { messageId: messageId },
             success: function () {
-                // Mesajı işaretlendikten sonra kalın biçimi kaldır
                 $('#infoButton-' + messageId).closest('tr').removeClass('bold-text');
             },
             error: function () {

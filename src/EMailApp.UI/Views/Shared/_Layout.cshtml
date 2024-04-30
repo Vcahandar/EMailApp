@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="~/admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="~/admin/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" type="text/css" href="~/admin/js/select.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="~/admin/css/vertical-layout-light/style.css">
@@ -22,6 +26,30 @@
     <link rel="shortcut icon" href="images/favicon.png" />
 </head>
 <body>
+
+    <style>
+
+        .nav-item i{
+            font-size: 1.2rem;
+            line-height: 1;
+            margin-right: 1rem;
+        }
+
+
+        .card-title{
+            color: #4b49ac !important;
+            font-size: 1.5rem !important;
+        }
+
+        tr th{
+            color: #248afd;
+        }
+
+
+
+
+</style>
+
     <div class="container-scroller">
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -99,7 +127,7 @@
                             <img src="~/admin/images/faces/face28.jpg" alt="profile" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                            <a class="dropdown-item">
+                            <a asp-controller="Profile" asp-action="Index" class="dropdown-item">
                                 <i class="ti-settings text-primary"></i>
                                 Settings
                             </a>
@@ -120,6 +148,27 @@
                 </button>
             </div>
         </nav>
+
+        <style>
+
+            .basic{
+                display: flex;
+                height: 70px;
+                background: #54c0ff;
+            }
+
+            .basic-title {
+                color: white;
+                font-size: 18px;
+            }
+
+   
+
+
+
+        </style>
+
+
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
             <!-- partial:partials/_settings-panel.html -->
@@ -295,36 +344,37 @@
             <!-- partial:partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            <i class="icon-grid menu-icon"></i>
-                            <span class="menu-title">Dashboard</span>
+                    <li class="nav-item basic-item">
+                        <a class="nav-link basic" asp-controller="EMailMessage" asp-action="SendMessage">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <span class="basic-title">Send Message</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mt-4">
                         <a class="nav-link" asp-controller="EMailMessage" asp-action="Inbox">
-                            <i class="icon-grid menu-icon"></i>
+                            <i class="fa-solid fa-envelope"></i>
                             <span class="menu-title">Inbox</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="EMailMessage" asp-action="Sendbox">
-                            <i class="icon-grid menu-icon"></i>
+                            <i class="fa-solid fa-paper-plane"></i>
                             <span class="menu-title">Sent</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="EMailMessage" asp-action="TrashMessageList">
-                            <i class="icon-grid menu-icon"></i>
-                            <span class="menu-title">Trash</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" asp-controller="Draft" asp-action="DraftMessageList">
-                            <i class="icon-grid menu-icon"></i>
+                            <i class="fa-solid fa-pen-ruler"></i>
                             <span class="menu-title">Draft</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="margin-bottom:15px;" asp-controller="EMailMessage" asp-action="TrashMessageList">
+                            <i class="fa-solid fa-trash"></i>
+                            <span class="menu-title">Trash</span>
+                        </a>
+                    </li>
+
 
                 </ul>
             </nav>
@@ -346,6 +396,9 @@
             <script src="~/admin/js/template.js"></script>
             <script src="~/admin/js/settings.js"></script>
             <script src="~/admin/js/todolist.js"></script>
+            <script src="~/admin/js/file-upload.js"></script>
+            <script src="~/admin/js/typeahead.js"></script>
+            <script src="~/admin/js/select2.js"></script>
             <!-- endinject -->
 
             <!-- Custom js for this page-->
