@@ -29,17 +29,23 @@ namespace EMailApp.UI.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterVM registerVM)
         {
-            AppUser appUser = new AppUser()
+            if (ModelState.IsValid)
             {
-                Name = registerVM.Name,
-                Surname = registerVM.Surname,
-                Email = registerVM.Email,
-                UserName = registerVM.Username,
-                ImageUrl = "defaultImage.jpg"
-            };
+                if (registerVM.Password != registerVM.ConfirmPassword)
+                {
+                    ModelState.AddModelError("", "Parolalar eşleşmiyor.");
+                    return View(registerVM);
+                }
 
-            if (registerVM.Password == registerVM.ConfirmPassword)
-            {
+                var appUser = new AppUser()
+                {
+                    Name = registerVM.Name,
+                    Surname = registerVM.Surname,
+                    Email = registerVM.Email,
+                    UserName = registerVM.Username,
+                    ImageUrl = "defaultImage.jpg"
+                };
+
                 var result = await _userManager.CreateAsync(appUser, registerVM.Password);
                 if (result.Succeeded)
                 {
@@ -47,13 +53,13 @@ namespace EMailApp.UI.Controllers
                 }
                 else
                 {
-                    foreach (var item in result.Errors)
+                    foreach (var error in result.Errors)
                     {
-                        ModelState.AddModelError("", item.Description);
+                        ModelState.AddModelError("", error.Description);
                     }
                 }
             }
-            return View();
+            return View(registerVM);
         }
 
 
@@ -64,23 +70,48 @@ namespace EMailApp.UI.Controllers
             return View();
         }
 
+
+
+
+
+
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM loginVM)
         {
+
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(loginVM.Username, loginVM.Password, false, true);
-                if (result.Succeeded)
+
+                // Kullanıcı adı veya e-posta alanının doldurulup doldurulmadığını kontrol edin
+                if (!string.IsNullOrEmpty(loginVM.EmailOrUsername))
                 {
-                    return RedirectToAction("Inbox", "EMailMessage");
+                    // Kullanıcının girdiği bilginin e-posta olup olmadığını kontrol edin
+                    var isEmail = loginVM.EmailOrUsername.Contains("@");
+                    var user = isEmail ? await _userManager.FindByEmailAsync(loginVM.EmailOrUsername) : await _userManager.FindByNameAsync(loginVM.EmailOrUsername);
+
+                    if (user != null)
+                    {
+                        var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, true);
+
+                        if (result.Succeeded)
+                        {
+                            return RedirectToAction("Inbox", "EMailMessage");
+                        }
+                    }
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Wrong username or password!");
-                }
+
             }
+
             return View();
         }
+
+
+
+
+
+
+
+
 
         public async Task<IActionResult> LogOut()
         {

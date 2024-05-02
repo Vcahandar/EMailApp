@@ -7257,6 +7257,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\userimage\\269e1fd5-a344-418b-b7e5-adaa491a7a5e.jpg",
+      "PackagePath": "staticwebassets\\userimage\\269e1fd5-a344-418b-b7e5-adaa491a7a5e.jpg"
+    },
+    {
       "Id": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\userimage\\defaultImage.jpg",
       "PackagePath": "staticwebassets\\userimage\\defaultImage.jpg"
     },

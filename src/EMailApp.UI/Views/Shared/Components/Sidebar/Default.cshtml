@@ -1,0 +1,39 @@
+﻿
+
+
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+        <li class="nav-item basic-item">
+            <a class="nav-link basic" asp-controller="EMailMessage" asp-action="SendMessage">
+                <i class="fa-solid fa-pen-to-square"></i>
+                <span class="basic-title">Send Message</span>
+            </a>
+        </li>
+        <li class="nav-item mt-4">
+            <a class="nav-link" asp-controller="EMailMessage" asp-action="Inbox">
+                <i class="fa-solid fa-envelope"></i>
+                <span class="menu-title">Inbox (@ViewBag.Inbox)</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="EMailMessage" asp-action="Sendbox">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span class="menu-title">Sent</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Draft" asp-action="DraftMessageList">
+                <i class="fa-solid fa-pen-ruler"></i>
+                <span class="menu-title">Draft</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="margin-bottom:15px;" asp-controller="EMailMessage" asp-action="TrashMessageList">
+                <i class="fa-solid fa-trash"></i>
+                <span class="menu-title">Trash</span>
+            </a>
+        </li>
+
+
+    </ul>
+</nav>

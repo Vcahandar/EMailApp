@@ -4,12 +4,12 @@ namespace EMailApp.UI.Models
 {
     public class LoginVM
     {
-        [Display(Name = "User name")]
-        [Required(ErrorMessage = "Enter Username...!")]
-        public string Username { get; set; }
+        [Display(Name = "E-posta, Kullanıcı Adı veya Kullanıcı ID")]
+        [Required(ErrorMessage = "E-posta, kullanıcı adı veya kullanıcı ID girin...!")]
+        public string EmailOrUsername { get; set; }
 
-        [Display(Name = "Password")]
-        [Required(ErrorMessage = "Enter the password...!")]
+        [Display(Name = "Şifre")]
+        [Required(ErrorMessage = "Şifre girin...!")]
         public string Password { get; set; }
     }
 }

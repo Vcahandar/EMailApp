@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AwzO6ElrtMtlBo8xSOBHrdcr8oS8dwqbQQhXiB4EtjI=",
+  "Hash": "atof4XuM/rGMZv/hNluEpyDYW6kXF/4QzozGGBUrzZQ=",
   "Source": "EMailApp.UI",
   "BasePath": "_content/EMailApp.UI",
   "Mode": "Default",
@@ -30870,6 +30870,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\userimage\\269e1fd5-a344-418b-b7e5-adaa491a7a5e.jpg",
+      "SourceId": "EMailApp.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\",
+      "BasePath": "_content/EMailApp.UI",
+      "RelativePath": "userimage/269e1fd5-a344-418b-b7e5-adaa491a7a5e.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\userimage\\269e1fd5-a344-418b-b7e5-adaa491a7a5e.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\userimage\\defaultImage.jpg",
