@@ -23,5 +23,7 @@ If you would like to contribute to the project, please feel free to submit a pul
 If you have any questions or suggestions, please contact us at jahandarvalibayli@gmail.com or open an issue on GitHub.
 
 
-![Email](https://github.com/Vcahandar/EMailApp/assets/119400454/2d6bad26-8423-485c-9e37-79bfcd683e55)
+
+
+![Email](https://github.com/Vcahandar/EMailApp/assets/119400454/753a25e1-b8d9-412d-8314-8be56cf70a4e)
 
