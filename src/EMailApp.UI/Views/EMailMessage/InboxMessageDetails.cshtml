@@ -19,6 +19,27 @@
         font-size: 1.1rem;
     }
 
+    .form-control{
+        font-family: inherit;
+    }
+
+    .name{
+        background-color: #e9ecef00!important;
+        border:none;
+        width:160px;
+        font-size: 1.1rem;
+        font-family: inherit;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .email{
+        font-style:italic;
+        font-family: inherit;
+        border: none;
+        background-color: #e9ecef00 !important;
+    }
+
 </style>
 
 <div class="col-12 grid-margin stretch-card">
@@ -30,8 +51,12 @@
 
             <form  class="forms-sample">
                 <div class="form-group">
-                    <label class="title" for="exampleInputName1">Recipient's mailing address</label>
-                    <input type="email" disabled="disabled" class="form-control" id="exampleInputName1" asp-for="SenderMail">
+                    <label class="title" for="exampleInputName1">Mailing Address of the Sender</label>
+                    <div style="display:flex;">
+                        <input type="email" disabled="disabled" class="form-control name" id="exampleInputName1" asp-for="SenderName">
+                        <input type="text" disabled="disabled" class="form-control email" id="exampleInputName1" asp-for="SenderMail" value="@Model.SenderMail">
+                    </div>
+
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail3">Subject</label>
@@ -49,9 +74,15 @@
     </div>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
 
 
+<script>
+    $(document).ready(function () {
+        var senderMail = $(".email").val();
+        $(".email").val("< " + senderMail + " >");
+    });
 
-
-
+</script>
 

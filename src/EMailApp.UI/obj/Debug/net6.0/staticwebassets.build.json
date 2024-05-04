@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "atof4XuM/rGMZv/hNluEpyDYW6kXF/4QzozGGBUrzZQ=",
+  "Hash": "1Yg5I/IGQ1Pvjm5s61F9HbT1l4+gSWGGwFWgKYrtJDw=",
   "Source": "EMailApp.UI",
   "BasePath": "_content/EMailApp.UI",
   "Mode": "Default",
@@ -30872,6 +30872,57 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
+      "Identity": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\logo\\email-logo.webp",
+      "SourceId": "EMailApp.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\",
+      "BasePath": "_content/EMailApp.UI",
+      "RelativePath": "logo/email-logo.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logo\\email-logo.webp"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\logo\\mini-logo.png",
+      "SourceId": "EMailApp.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\",
+      "BasePath": "_content/EMailApp.UI",
+      "RelativePath": "logo/mini-logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logo\\mini-logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\logo\\Orange.png",
+      "SourceId": "EMailApp.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\",
+      "BasePath": "_content/EMailApp.UI",
+      "RelativePath": "logo/Orange.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logo\\Orange.png"
+    },
+    {
       "Identity": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\userimage\\269e1fd5-a344-418b-b7e5-adaa491a7a5e.jpg",
       "SourceId": "EMailApp.UI",
       "SourceType": "Discovered",
@@ -30904,6 +30955,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\userimage\\defaultImage.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\userimage\\fd909bda-3c05-4847-a8ef-849c6f327a07.jpg",
+      "SourceId": "EMailApp.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\",
+      "BasePath": "_content/EMailApp.UI",
+      "RelativePath": "userimage/fd909bda-3c05-4847-a8ef-849c6f327a07.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\userimage\\fd909bda-3c05-4847-a8ef-849c6f327a07.jpg"
     }
   ]
 }

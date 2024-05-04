@@ -53,7 +53,7 @@
                                     </td>
                                     <td>@item.Date.ToString("dd/MM/yyyy")</td>
                                     <td>
-                                        <a id="infoButton-@item.MessageId" asp-action="InboxMessageDetails" asp-route-id="@item.MessageId" class="btn btn-info">Info</a>
+                                        <a id="infoButton-@item.MessageId" asp-action="InboxMessageDetails" asp-route-id="@item.MessageId" class="btn btn-info">View</a>
                                         <a asp-action="TrashMessages" asp-route-id="@item.MessageId" class="btn btn-outline-danger btn-fw">Delete</a>
                                     </td>
                                 </tr>

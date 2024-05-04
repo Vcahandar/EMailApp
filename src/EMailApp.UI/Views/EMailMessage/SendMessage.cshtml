@@ -10,26 +10,41 @@
                     <label for="exampleInputName1">Recipient's mailing address</label>
                     <input type="email" class="form-control" id="exampleInputName1" asp-for="ReceiverMail" placeholder="Recipient's mailing address">
                     <span class="text-danger" asp-validation-for="ReceiverMail"></span>
-
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail3">Subject</label>
                     <input type="text" class="form-control" id="exampleInputEmail3" asp-for="Subject" placeholder="Subject">
                     <span class="text-danger" asp-validation-for="Subject"></span>
-
                 </div>
                 <div class="form-group">
                     <label for="exampleTextarea1">Textarea</label>
                     <textarea class="form-control" id="exampleTextarea1" asp-for="Content" rows="4"></textarea>
                     <span class="text-danger" asp-validation-for="Content"></span>
-
                 </div>
 
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @foreach (var key in ViewData.ModelState.Keys)
+                        {
+                            foreach (var error in ViewData.ModelState[key].Errors)
+                            {
+                                if (error.ErrorMessage == "Email not found")
+                                {
+                                    <span>@error.ErrorMessage</span>
 
-                <button type="submit" asp-controller="Draft" asp-action="DraftMessageSave" class="btn btn-default"><i class="fas fa-pencil-alt"></i>Taslaklara Kaydet</button>
+                                    <br />
+                                }
+                            }
+                        }
+                    </div>
+                }
 
-                <button type="submit" onclick="return validateFormForSubmit()" class="btn btn-primary mr-2">Submit</button>
-                <a asp-action="Inbox" class="btn btn-light">Cancel</a>
+
+                <button type="submit" asp-controller="Draft" asp-action="DraftMessageSave" class="btn btn-outline-warning btn-fw"><i class="fas fa-pencil-alt"></i>Save to drafts</button>
+
+                <button type="submit" onclick="return validateFormForSubmit()" class="btn btn-outline-info btn-fw">Submit</button>
+                <a asp-action="Inbox" class="btn btn-outline-danger btn-fw">Cancel</a>
             </form>
 
         </div>
@@ -44,12 +59,8 @@
 
         if (receiverMail.trim() === '' || subject.trim() === '' || content.trim() === '') {
             alert("Please fill out all fields");
-            return false; 
+            return false;
         }
-        return true; 
+        return true;
     }
 </script>
-
-
-
-

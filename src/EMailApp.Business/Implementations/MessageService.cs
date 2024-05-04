@@ -22,9 +22,17 @@ namespace EMailApp.Business.Implementations
             return _messageRepository.GetByFilter(e => e.Status == false);
         }
 
-        public List<Message> GetListReceiverMessage(string e)
+        public List<Message> GetListReceiverMessage(string e,string searchText)
         {
-            return _messageRepository.GetByFilter(c => c.ReceiverMail == e);
+            if (searchText == null)
+            {
+                return _messageRepository.GetByFilter(c => c.ReceiverMail == e);
+
+            }
+
+            return _messageRepository.GetByFilter(c => c.ReceiverMail == e).Where(m=>m.Subject.ToLower().Contains(searchText.ToLower())).ToList();
+
+
         }
 
         public List<Message> GetListSenderMessage(string e)

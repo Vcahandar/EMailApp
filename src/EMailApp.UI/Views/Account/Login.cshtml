@@ -9,12 +9,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skydash Admin</title>
+    <title>Arowwai Admin</title>
     <link rel="stylesheet" href="~/admin/vendors/feather/feather.css">
     <link rel="stylesheet" href="~/admin/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="~/admin/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="~/admin/css/vertical-layout-light/style.css">
-    <link rel="shortcut icon" href="~/admin/images/favicon.png" />
+    <link rel="shortcut icon" href="~/logo/mini-logo.png" />
 </head>
 <body>
     <div class="container-scroller">
@@ -24,30 +24,31 @@
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                             <div class="brand-logo">
-                                <img src="~/admin/images/logo.svg" alt="logo">
+                                <img src="~/logo/Orange.png" alt="logo">
                             </div>
-                            <h4>Mail Uygulamamıza Hoşgeldiniz</h4>
-                            <h6 class="font-weight-light">Giriş yaparak devam edin.</h6>
+                            <h4>Welcome to our EMail App</h4>
+                            <h6 class="font-weight-light">Continue by logging in.</h6>
                             <form class="pt-3" method="post">
                                 <div class="form-group">
-                                    <label for="EmailOrUsername">E-posta veya Kullanıcı Adı:</label>
-                                    <input type="text" class="form-control form-control-lg" id="EmailOrUsername" asp-for="EmailOrUsername" placeholder="E-posta veya Kullanıcı Adı" required>
+                                    <label for="EmailOrUsername">Email or Username:</label>
+                                    <input type="text" class="form-control form-control-lg" id="EmailOrUsername" asp-for="EmailOrUsername" placeholder="Email or Username:" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="Password">Şifre:</label>
-                                    <input type="password" class="form-control form-control-lg" id="Password" asp-for="Password" placeholder="Şifre" required>
+                                    <label for="Password">Password:</label>
+                                    <input type="password" class="form-control form-control-lg" id="Password" asp-for="Password" placeholder="Password" required>
                                 </div>
                                 @if (!ViewData.ModelState.IsValid)
                                 {
                                     <div class="alert alert-danger" role="alert">
-                                        Lütfen girdiğiniz bilgileri kontrol edin.
+                                        Invalid login attempt.
                                     </div>
                                 }
+
                                 <div class="mt-3">
-                                    <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">Giriş Yap</button>
+                                    <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">Login</button>
                                 </div>
                                 <div class="text-center mt-4 font-weight-light">
-                                    Hesabınız Yok Mu? <a asp-controller="account" asp-action="register" class="text-primary">Yeni Hesap Oluştur</a>
+                                    Don't have an account? <a asp-controller="account" asp-action="register" class="text-primary">Create New Account</a>
                                 </div>
                             </form>
                         </div>

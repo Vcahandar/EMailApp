@@ -33,7 +33,7 @@ namespace EMailApp.UI.Controllers
             {
                 if (registerVM.Password != registerVM.ConfirmPassword)
                 {
-                    ModelState.AddModelError("", "Parolalar eşleşmiyor.");
+                    ModelState.AddModelError("", "Passwords do not match.");
                     return View(registerVM);
                 }
 
@@ -78,14 +78,10 @@ namespace EMailApp.UI.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM loginVM)
         {
-
             if (ModelState.IsValid)
             {
-
-                // Kullanıcı adı veya e-posta alanının doldurulup doldurulmadığını kontrol edin
                 if (!string.IsNullOrEmpty(loginVM.EmailOrUsername))
                 {
-                    // Kullanıcının girdiği bilginin e-posta olup olmadığını kontrol edin
                     var isEmail = loginVM.EmailOrUsername.Contains("@");
                     var user = isEmail ? await _userManager.FindByEmailAsync(loginVM.EmailOrUsername) : await _userManager.FindByNameAsync(loginVM.EmailOrUsername);
 
@@ -99,12 +95,14 @@ namespace EMailApp.UI.Controllers
                         }
                     }
                 }
-
             }
 
-            return View();
-        }
+            // Eğer giriş başarısızsa, ModelState'e bir hata ekleyin
+            ModelState.AddModelError(string.Empty, "Invalid login attempt.");
 
+            // Hata durumunda, Login sayfasını yeniden göster
+            return View(loginVM);
+        }
 
 
 

@@ -10,7 +10,7 @@ namespace EMailApp.Business.Interfaces
     public interface IMessageService : IGenericService<Message>
     {
         List<Message> GetListSenderMessage(string e);
-        List<Message> GetListReceiverMessage(string e);
+        List<Message> GetListReceiverMessage(string e,string searchText);
 
         List<Message> GetListDeleteMessage();
     }

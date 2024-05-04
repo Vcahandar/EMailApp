@@ -18,11 +18,11 @@ namespace EMailApp.UI.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Inbox(string e)
+        public async Task<IActionResult> Inbox(string e, string searchText)
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
             e = values.Email;
-            var messageList = _messageService.GetListReceiverMessage(e);
+            var messageList = _messageService.GetListReceiverMessage(e,searchText);
             return View(messageList);
         }
 
@@ -44,13 +44,10 @@ namespace EMailApp.UI.Controllers
         }
 
 
-
         [HttpPost]
         public async Task<IActionResult> SendMessage(Message message)
         {
-
-
-            if(message.ReceiverMail != null)
+            if (message.ReceiverMail != null)
             {
                 var values = await _userManager.FindByNameAsync(User.Identity.Name);
                 string mail = values.Email;
@@ -61,17 +58,26 @@ namespace EMailApp.UI.Controllers
                 message.Status = true;
                 message.IsDraft = false;
                 message.IsRead = false;
+
+                // Kullanıcı adı ve soyadını almak için veritabanında arama yap
                 var usernamesurname = _context.Users.Where(x => x.Email == message.ReceiverMail).Select(y => y.Name + " " + y.Surname).FirstOrDefault();
-                message.ReceiverName = usernamesurname;
-                _messageService.TInsert(message);
-                return RedirectToAction("Inbox");
+
+                if (usernamesurname != null)
+                {
+                    message.ReceiverName = usernamesurname;
+                    _messageService.TInsert(message);
+                    return RedirectToAction("Inbox");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Email not found");
+                    return View(message); // Hata durumunda formu yeniden göster
+                }
             }
 
-            return View();
-
-
-
+            return View(message);
         }
+
 
 
 

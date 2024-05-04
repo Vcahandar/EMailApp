@@ -7257,12 +7257,28 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\logo\\Orange.png",
+      "PackagePath": "staticwebassets\\logo\\Orange.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\logo\\email-logo.webp",
+      "PackagePath": "staticwebassets\\logo\\email-logo.webp"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\logo\\mini-logo.png",
+      "PackagePath": "staticwebassets\\logo\\mini-logo.png"
+    },
+    {
       "Id": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\userimage\\269e1fd5-a344-418b-b7e5-adaa491a7a5e.jpg",
       "PackagePath": "staticwebassets\\userimage\\269e1fd5-a344-418b-b7e5-adaa491a7a5e.jpg"
     },
     {
       "Id": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\userimage\\defaultImage.jpg",
       "PackagePath": "staticwebassets\\userimage\\defaultImage.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\userimage\\fd909bda-3c05-4847-a8ef-849c6f327a07.jpg",
+      "PackagePath": "staticwebassets\\userimage\\fd909bda-3c05-4847-a8ef-849c6f327a07.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.EMailApp.UI.Microsoft.AspNetCore.StaticWebAssets.props",

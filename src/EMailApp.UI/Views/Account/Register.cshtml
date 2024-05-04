@@ -14,7 +14,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>AdminSkydash Admin</title>
+    <title>Arowwai Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="~/admin/vendors/feather/feather.css">
     <link rel="stylesheet" href="~/admin/vendors/ti-icons/css/themify-icons.css">
@@ -25,7 +25,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="~/admin/css/vertical-layout-light/style.css">
     <!-- endinject -->
-    <link rel="shortcut icon" href="~/admin/images/favicon.png" />
+    <link rel="shortcut icon" href="~/logo/mini-logo.png" />
 </head>
 
 <body>
@@ -36,44 +36,44 @@
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                             <div class="brand-logo">
-                                <img src="~/admin/images/logo.svg" alt="logo">
+                                <img src="~/logo/Orange.png" alt="logo">
                             </div>
-                            <h4>Hesabın Yok Mu?</h4>
-                            <h6 class="font-weight-light">Hemen Kaydol Ve Kullanmaya Başla</h6>
+                            <h4>Don't have an account?</h4>
+                            <h6 class="font-weight-light">Sign Up Now and Start Using</h6>
                             <form class="pt-3" method="post">
                                 <div class="form-group">
-                                    <label>Adınız</label>
+                                    <label>Name</label>
                                     <span asp-validation-for="Name" class="text-danger"></span>
                                     <input type="text" asp-for="Name" class="form-control" />
                                 </div>
                                 <div class="form-group">
-                                    <label>Soyadınız</label>
+                                    <label>Surname</label>
                                     <span asp-validation-for="Surname" class="text-danger"></span>
                                     <input type="text" asp-for="Surname" class="form-control" />
                                 </div>
                                 <div class="form-group">
-                                    <label>Kullanıcı Adınız</label>
+                                    <label>Username</label>
                                     <span asp-validation-for="Username" class="text-danger"></span>
                                     <input type="text" asp-for="Username" class="form-control" />
                                 </div>
                                 <div class="form-group">
-                                    <label>Mail Adresiniz</label>
+                                    <label>Email</label>
                                     <span asp-validation-for="Email" class="text-danger"></span>
                                     <input type="text" asp-for="Email" class="form-control" />
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Şifre</label>
+                                    <label>Password</label>
                                     <span asp-validation-for="Password" class="text-danger"></span>
                                     <input type="text" asp-for="Password" class="form-control" />
                                 </div>
                                 <div class="form-group">
-                                    <label>Şifre Tekrar</label>
+                                    <label>Confirm Password</label>
                                     <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                                     <input type="text" asp-for="ConfirmPassword" class="form-control" />
                                 </div>
                                 <div class="form-group">
-                                    <label>Görsel Url</label>
+                                    <label>Image Url</label>
                                     <span asp-validation-for="ImageUrl" class="text-danger"></span>
                                     <input type="text" asp-for="ImageUrl" class="form-control" />
                                 </div>
@@ -81,11 +81,11 @@
                                 <div class="text-danger" asp-validation-summary="ModelOnly">
                                 </div>
                                 <div class="mt-3">
-                                    <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Kaydol</button>
+                                    <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Register</button>
                                 </div>
 
                                 <div class="text-center mt-4 font-weight-light">
-                                    Mevcutta Hesabınız Var Mı ? <a asp-controller="account" asp-action="login" class="text-primary">Giriş Yap</a>
+                                    Already have an account? <a asp-controller="account" asp-action="login" class="text-primary">Login Yap</a>
                                 </div>
                             </form>
                         </div>
