@@ -1,7 +1,7 @@
 # EMailApp Project
 
 ## About the Project
-EMailApp is a project developed to simplify email management for users. The project adopts the Onion Architecture approach using the C# programming language. This allows the project's layers to be developed independently, resulting in a structure that is easy to maintain.
+EMailApp is a project developed to simplify email management for users. The project adopts the Onion Architecture approach using the #### C# programming language. This allows the project's layers to be developed independently, resulting in a structure that is easy to maintain.
 
 ## Features
 - Users can register and manage their email accounts within the system.
@@ -10,7 +10,7 @@ EMailApp is a project developed to simplify email management for users. The proj
 - Emails can be organized into folders.
 - The system notifies users of new email arrivals.
   
-##Installation
+## Installation
 To clone the project to your local machine, you can use the following command:
 
 git clone https://github.com/Vcahandar/EMailApp.git
@@ -21,3 +21,7 @@ If you would like to contribute to the project, please feel free to submit a pul
 
 ## Contact
 If you have any questions or suggestions, please contact us at jahandarvalibayli@gmail.com or open an issue on GitHub.
+
+
+![Email](https://github.com/Vcahandar/EMailApp/assets/119400454/2d6bad26-8423-485c-9e37-79bfcd683e55)
+
