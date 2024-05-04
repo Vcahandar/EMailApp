@@ -42,6 +42,9 @@
 
 </style>
 
+<div class="container-fluid page-body-wrapper">
+
+
 <div class="col-12 grid-margin stretch-card">
     <div class="card mt-3">
         <div class="card-body">
@@ -64,7 +67,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleTextarea1">Textarea</label>
-                    <textarea disabled="disabled" class="form-control" id="exampleTextarea1" asp-for="Content" rows="4"></textarea>
+                    <textarea disabled="disabled" class="form-control" id="exampleTextarea1" asp-for="Content" rows="5"></textarea>
                 </div>
 
                 <a asp-action="Inbox" class="btn btn-danger">Back</a>
@@ -73,10 +76,11 @@
         </div>
     </div>
 </div>
+</div>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
-
 
 <script>
     $(document).ready(function () {
@@ -84,5 +88,25 @@
         $(".email").val("< " + senderMail + " >");
     });
 
+    $(document).ready(function () {
+        function adjustTextareaHeight() {
+            var contentTextarea = $("#exampleTextarea1");
+            contentTextarea.css('height', 'auto'); // Önce textarea'nın boyutunu sıfırla
+            var scrollHeight = contentTextarea[0].scrollHeight; // İçeriğin tamamını göstermek için gerekli olan yükseklik
+            contentTextarea.css('height', scrollHeight + 'px'); // Yeni yüksekliği ayarla
+        }
+
+        // Sayfa yüklendiğinde ve içerik değiştiğinde textarea'nın boyutunu ayarla
+        adjustTextareaHeight();
+        $("#exampleTextarea1").on('input', function () {
+            adjustTextareaHeight();
+        });
+    });
+
+
+
+
 </script>
+
+
 

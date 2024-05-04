@@ -1197,10 +1197,6 @@
       "PackagePath": "staticwebassets\\admin\\js\\tooltips.js"
     },
     {
-      "Id": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\admin\\js\\typeahead.js",
-      "PackagePath": "staticwebassets\\admin\\js\\typeahead.js"
-    },
-    {
       "Id": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\admin\\js\\wizard.js",
       "PackagePath": "staticwebassets\\admin\\js\\wizard.js"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1Yg5I/IGQ1Pvjm5s61F9HbT1l4+gSWGGwFWgKYrtJDw=",
+  "Hash": "Ly0p349bPinN3Eothze3KVZNFukjULBBE3qy+w7fPrM=",
   "Source": "EMailApp.UI",
   "BasePath": "_content/EMailApp.UI",
   "Mode": "Default",
@@ -5115,23 +5115,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\js\\tooltips.js"
-    },
-    {
-      "Identity": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\admin\\js\\typeahead.js",
-      "SourceId": "EMailApp.UI",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\",
-      "BasePath": "_content/EMailApp.UI",
-      "RelativePath": "admin/js/typeahead.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\admin\\js\\typeahead.js"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\EMailApp\\src\\EMailApp.UI\\wwwroot\\admin\\js\\wizard.js",

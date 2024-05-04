@@ -1,5 +1,8 @@
 ﻿@model Message
 
+<div class="container-fluid page-body-wrapper">
+
+
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
@@ -18,7 +21,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleTextarea1">Textarea</label>
-                    <textarea class="form-control" id="exampleTextarea1" asp-for="Content" rows="4"></textarea>
+                        <textarea class="form-control" id="exampleTextarea1" asp-for="Content" rows="9" cols="50"></textarea>
                     <span class="text-danger" asp-validation-for="Content"></span>
                 </div>
 
@@ -49,6 +52,7 @@
 
         </div>
     </div>
+</div>
 </div>
 
 <script>
